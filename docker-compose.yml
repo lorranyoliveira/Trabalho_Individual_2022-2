@@ -12,6 +12,29 @@ services:
       - db_postgres_data:/var/lib/postgresql/data
     env_file:
       - ./.env
+    networks:
+      - app-network
+
+  backend:
+    container_name: backend
+    restart: always
+    build:
+      context: .
+      dockerfile: ./library_back/Dockerfile
+    command:  ["./library_back/src/start.sh"]
+    ports:
+      - 8000:8000 # server port
+    volumes:
+      - ./src:/src
+      - pip_cache:/usr/local/lib/python3/site-packages
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    name: app-network
+    driver: bridge
 
 volumes:
   db_postgres_data:
+  pip_cache:
