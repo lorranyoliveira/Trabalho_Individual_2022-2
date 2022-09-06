@@ -25,11 +25,24 @@ services:
     ports:
       - 8000:8000 # server port
     volumes:
-      - ./src:/src
+      - ./library_back/src:/src
       - pip_cache:/usr/local/lib/python3/site-packages
     networks:
       - app-network
 
+  app:
+    container_name: front
+    build: 
+      dockerfile: ./library_front/Dockerfile
+    command: npm start
+    ports:
+      - 3000:3000
+    volumes:
+      - ./library_front:/usr/app
+      - /usr/app/node_modules
+    networks:
+      - app-network
+      
 networks:
   app-network:
     name: app-network
