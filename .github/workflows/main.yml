@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build da aplicacao
-      run: docker-compose up -d
+      run: docker compose up -d
       
   Teste-BackEnd:
   
@@ -26,4 +26,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Testes do backend
-        run: docker-compose run backend python3 manage.py test
+        run: docker compose run backend python3 manage.py test
