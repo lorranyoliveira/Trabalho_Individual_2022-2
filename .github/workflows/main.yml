@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build da aplicacao
-      run: docker compose up --build
+      run: docker compose build
