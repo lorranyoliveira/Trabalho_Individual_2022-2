@@ -35,4 +35,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Testes do front
-        run: docker compose run frontend npm && npm install jest-watch-typeahead@0.6.5 && npm test
+        run: docker compose run frontend npm install jest-watch-typeahead@0.6.5 && npm test
