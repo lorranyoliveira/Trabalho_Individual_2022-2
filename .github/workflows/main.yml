@@ -26,4 +26,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Testes do backend
-        run: docker compose run backend python3 manage.py test
+        run: docker compose run backend python3 library_back/manage.py test
