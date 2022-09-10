@@ -49,4 +49,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Lint no frontend
-        run: docker-compose run frontend bash -c "npm run lint"
+        run: docker compose run frontend bash -c "npm run lint"
