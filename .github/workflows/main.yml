@@ -35,18 +35,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Teste do front
-        run: docker compose run frontend bash -c "npm ci && npm run build --if-present && npm test"
+        run: docker compose run frontend bash -c "npm install && npm test"
         
   Lint-BackEnd:
+  
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v3
       - name: Lint no backend
         run: docker compose run backend bash -c "pip install pylint && pylint library_back/*.py"
-        
-  Lint-FrontEnd:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Lint no frontend
-        run: docker compose run frontend bash -c "npm run lint"
+    
