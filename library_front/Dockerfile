@@ -1,6 +1,8 @@
-FROM node:13-alpine
+FROM node
 
 WORKDIR /usr/app
+
+RUN chown -R node:node /usr/app
 
 COPY library_front/package.json ./
 
