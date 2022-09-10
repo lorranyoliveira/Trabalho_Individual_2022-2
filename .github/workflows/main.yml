@@ -35,5 +35,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Teste do front
-        run: docker compose run frontend /bin//sh -c "npm install jest-watch-typeahead@0.6.5 && npm test"
+        run: docker compose run frontend /bin//sh -c "npm install jest-watch-typeahead && npm run test"
         
+  Lint-BackEnd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Lint no backend
+        run: docker-compose run backend bash -c "pylint *.py"
