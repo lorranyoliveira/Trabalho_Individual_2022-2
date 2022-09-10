@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - name: Teste do front
         run: docker compose run frontend bash -c "npm test"
         
@@ -42,4 +42,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Lint no backend
-        run: docker compose run backend bash -c "pip install pylint && pylint *.py"
+        run: docker compose run backend bash -c "pip install pylint && pylint library_back/*.py"
