@@ -8,7 +8,7 @@ ENV PYTHONUNBUFFERED 1
 
 EXPOSE 8000
 
-COPY library_back/requirements.txt /app/requirements.txt
+COPY ./library_back/requirements.txt /app/requirements.txt
 
 RUN pip3 install --upgrade pip==21.* && \
     pip3 install -r requirements.txt
