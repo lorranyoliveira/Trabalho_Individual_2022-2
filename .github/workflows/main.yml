@@ -58,7 +58,7 @@ jobs:
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "backendlorranyy01"
-          heroku_email:  ${{secrets.HEROKU_EMAIL}}
+          email:  ${{secrets.HEROKU_EMAIL}}
           dockerfile_directory: ./library_back
           dockerfile_name: Dockerfile
           docker_options: "--no-cache"
@@ -75,7 +75,7 @@ jobs:
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "frontlorranyy01"
-          heroku_email:  ${{secrets.HEROKU_EMAIL}}
+          email:  ${{secrets.HEROKU_EMAIL}}
           dockerfile_directory: ./library_front
           dockerfile_name: Dockerfile
           docker_options: "--no-cache"
