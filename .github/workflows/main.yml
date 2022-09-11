@@ -46,5 +46,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Lint no backend
-        run: docker compose run backend bash -c "pip install --upgrade pip && pip install pylint && find . -name '*.py' -print -exec pylint {} "
+        run: docker compose run backend bash -c "pip install --upgrade pip && pip install pylint && find . -name '*.py' -print -exec pylint {} \;"
     
