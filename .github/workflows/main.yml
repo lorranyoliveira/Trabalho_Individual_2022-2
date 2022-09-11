@@ -49,7 +49,7 @@ jobs:
         run: docker compose run backend bash -c "pip install --upgrade pip && pip install pylint && find . -name '*.py' -print -exec pylint {} \;"
     
   Deploy_back:
-
+    needs: Teste-BackEnd
     runs-on: ubuntu-lastest
     steps:
       - uses: actions/checkout@v3
@@ -58,14 +58,10 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "trabalho-individual-lorrany-back"
           heroku_email: "lorrany_any@hotmail.com"
-          dockerfile_directory: ./library_back/Dockerfile
-          dockerfile_name: backend.PROD.Dockerfile
-          docker_options: "--no-cache"
-          process_type: web
-  
+         
   
   Deploy_front:
-
+    needs: Teste-FrontEnd
     runs-on: ubuntu-lastest
     steps:
       - uses: actions/checkout@v3
@@ -74,10 +70,6 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "trabalho-individual-lorrany-front"
           heroku_email: "lorrany_any@hotmail.com"
-          dockerfile_directory: ./library_front/Dockerfile
-          dockerfile_name: frontend.PROD.Dockerfile
-          docker_options: "--no-cache"
-          process_type: web
   
   
   
