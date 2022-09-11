@@ -54,11 +54,11 @@ jobs:
     
     steps:
       - uses: actions/checkout@v2
-      - uses: gonuit/heroku-docker-deploy@v1.3.3
+      - uses: gonuit/heroku-docker-deploy@v1.3.2
         with:
+          email:  ${{secrets.HEROKU_EMAIL}}
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "backendlorranyy01"
-          email:  ${{secrets.HEROKU_EMAIL}}
           dockerfile_directory: ./library_back
           dockerfile_name: Dockerfile
           docker_options: "--no-cache"
@@ -71,11 +71,11 @@ jobs:
     
     steps:
       - uses: actions/checkout@v2
-      - uses: gonuit/heroku-docker-deploy@v1.3.3
+      - uses: gonuit/heroku-docker-deploy@v1.3.2
         with:
+          email:  ${{secrets.HEROKU_EMAIL}}
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "frontlorranyy01"
-          email:  ${{secrets.HEROKU_EMAIL}}
           dockerfile_directory: ./library_front
           dockerfile_name: Dockerfile
           docker_options: "--no-cache"
