@@ -63,10 +63,12 @@ jobs:
           dockerfile_name: Back.PROD.Dockerfile
           docker_options: "--no-cache"
           process_type: web
+          dontuseforce: true
+          dontautocreate: true
   
   Deploy_front:
     
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-20.04
     
     steps:
       - uses: actions/checkout@v2
@@ -79,6 +81,8 @@ jobs:
           dockerfile_name: Front.PROD.Dockerfile
           docker_options: "--no-cache"
           process_type: web
+          dontuseforce: true
+          dontautocreate: true
   
   
   
