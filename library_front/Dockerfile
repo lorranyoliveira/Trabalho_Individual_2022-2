@@ -4,7 +4,7 @@ WORKDIR /usr/app
 
 RUN chown -R node:node /usr/app
 
-COPY library_front/package.json ./
+COPY ./library_front/package.json ./
 
 RUN npm install
 
