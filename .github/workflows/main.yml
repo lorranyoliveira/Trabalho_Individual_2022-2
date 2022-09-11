@@ -59,12 +59,10 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "backendlorranyy01"
           heroku_email:  ${{secrets.HEROKU_EMAIL}}
-          dockerfile_directory: ./library_back/Dockerfile
+          dockerfile_directory: ./library_back
           dockerfile_name: Back.PROD.Dockerfile
           docker_options: "--no-cache"
-          process_type: web
-          dontuseforce: true
-          dontautocreate: true
+
   
   Deploy_front:
     
@@ -77,15 +75,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "frontlorranyy01"
           heroku_email:  ${{secrets.HEROKU_EMAIL}}
-          dockerfile_directory: ./library_front/Dockerfile
+          dockerfile_directory: ./library_front
           dockerfile_name: Front.PROD.Dockerfile
-          docker_options: "--no-cache"
-          process_type: web
-          dontuseforce: true
-          dontautocreate: true
-  
-  
-  
-  
-  
-  
