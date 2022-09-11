@@ -58,7 +58,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "trabalho-individual-lorrany-back"
           heroku_email: "lorrany_any@hotmail.com"
-          dockerfile_directory: ./library_back
+          dockerfile_directory: ./library_back/Dockerfile
           dockerfile_name: backend.PROD.Dockerfile
           docker_options: "--no-cache"
           process_type: web
@@ -74,7 +74,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "trabalho-individual-lorrany-front"
           heroku_email: "lorrany_any@hotmail.com"
-          dockerfile_directory: ./library_front
+          dockerfile_directory: ./library_front/Dockerfile
           dockerfile_name: frontend.PROD.Dockerfile
           docker_options: "--no-cache"
           process_type: web
