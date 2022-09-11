@@ -48,3 +48,23 @@ jobs:
       - name: Lint no backend
         run: docker compose run backend bash -c "pip install --upgrade pip && pip install pylint && find . -name '*.py' -print -exec pylint {} \;"
     
+  Deploy:
+  
+    needs: build
+    runs-on: ubuntu-lastest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "trabalho-individual-lorrany"
+          heroku_email: "lorrany_any@hotmail.com"
+  
+  
+  
+  
+  
+  
+  
+  
+  
