@@ -27,3 +27,24 @@ jobs:
       - uses: actions/checkout@v3
       - name: Testes do backend
         run: docker compose run backend python3 library_back/manage.py test
+        
+  
+  Teste-FrontEnd:
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      - name: Teste do front
+        run: docker compose run frontend bash -c "CI=true npm test"
+     
+     
+  Lint-BackEnd:
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      - name: Lint no backend
+        run: docker compose run backend bash -c "pip install --upgrade pip && pip install pylint && find . -name '*.py' -print -exec pylint {} "
+    
