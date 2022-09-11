@@ -49,8 +49,9 @@ jobs:
         run: docker compose run backend bash -c "pip install --upgrade pip && pip install pylint && find . -name '*.py' -print -exec pylint {} \;"
     
   Deploy_back:
-    needs: Teste-BackEnd
+    
     runs-on: ubuntu-20.04
+    
     steps:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12
@@ -64,8 +65,9 @@ jobs:
           process_type: web
   
   Deploy_front:
-    needs: Teste-FrontEnd
+    
     runs-on: ubuntu-lastest
+    
     steps:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12
